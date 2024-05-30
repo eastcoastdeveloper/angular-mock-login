@@ -1,0 +1,14 @@
+<div class="login-comp">
+  <div class="user-wrapper">
+    <div class="options">
+      <div #options class="default" (click)="showUsers()">
+        <span>{{selectedUser}}</span>
+        <span class="caret" [ngClass]="{'rotate-caret':userSelection}">&#8897;</span>
+      </div>
+      <div class="user-list" *ngIf="userSelection">
+        <span *ngFor="let user of allUsers; let i = index" (click)="chosenOne(i)">{{user}}</span>
+      </div>
+    </div>
+    <button type="button" (click)="authenticateUser()">Login<span>&#8897;</span></button>
+  </div>
+</div>
